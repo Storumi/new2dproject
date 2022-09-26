@@ -15,8 +15,8 @@ public class cameramove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.position = target.transform.position;
-        //transform.position += new Vector3(0,0,-1);
+        
         transform.position = Vector2.Lerp(transform.position, target.transform.position, Time.deltaTime);
+        transform.position = new Vector3(transform.position.x, transform.position.y, -1);
     }
 }

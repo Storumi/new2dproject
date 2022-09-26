@@ -5,11 +5,10 @@ using UnityEngine;
 public class targetswap : MonoBehaviour
 {
     public GameObject camera;
-    bool fired;
+    public  bool fired;
     // Start is called before the first frame update
     void Start()
     {
-        fired= false;
 
     }
 
@@ -18,7 +17,12 @@ public class targetswap : MonoBehaviour
     {
 
     }
-    void OnCollisionEnter2D(Collision2D col) { if ((col.gameObject.name == "Domino") && !fired) { camera.GetComponent<cameramove>().target = col.gameObject; fired = true; } }
+    void OnCollisionEnter2D(Collision2D col)
+    {    
+            if (col.gameObject.GetComponent<targetswap>()!=null && col.gameObject.GetComponent<targetswap>().fired==false)
+            { camera.GetComponent<cameramove>().target = col.gameObject; col.gameObject.GetComponent<targetswap>().fired = true;} 
+    }                                                     
+                                                                           
 
 }
 
