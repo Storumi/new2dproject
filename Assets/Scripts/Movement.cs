@@ -13,13 +13,11 @@ public class Movement : MonoBehaviour
     float Xin;
     Vector2 hops;
     Vector2 slides;
-    //bool landed;
     private Rigidbody2D rb2d;
     AudioSource ad;
     // Start is called before the first frame update
     void Start()
     {
-        //landed = true;
         rb2d = this.GetComponent<Rigidbody2D>();
         hops.x = 0;
         hops.y = jumpheight;
