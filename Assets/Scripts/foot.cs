@@ -5,21 +5,18 @@ using UnityEngine;
 public class foot : MonoBehaviour
 {
     AudioSource ad;
-    HingeJoint2D h2d;
     public bool landed;
     // Start is called before the first frame update
     void Start()
     {
         ad = GetComponent<AudioSource>();
         landed = false;
-        h2d = GetComponent<HingeJoint2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Stand")){ h2d.useMotor = true; }
-        else { h2d.useMotor = false; }
+
     }
     void OnCollisionEnter2D(Collision2D col) 
     {
