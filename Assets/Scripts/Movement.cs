@@ -44,7 +44,7 @@ public class Movement : MonoBehaviour
         
         
         rb2d.AddForce(slides, ForceMode2D.Force);
-        rb2d.AddTorque(-2*Yin, ForceMode2D.Force);
+        rb2d.AddTorque(-Yin, ForceMode2D.Force);
 
     }
     void OnCollisionEnter2D(Collision2D collision) 

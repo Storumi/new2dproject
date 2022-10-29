@@ -30,7 +30,9 @@ public class foot : MonoBehaviour
                    gob.name != "Bicep Right" &&
                    gob.name != "Bicep Left" &&
                    gob.name != "Forearm Right" &&
-                   gob.name != "Forearm Left")
+                   gob.name != "Forearm Left" &&
+                   gob.name != "Visor" &&
+                   gob.name != "Backpack")
 
             { landed = true; }
             else { landed = false; }
@@ -55,7 +57,9 @@ public class foot : MonoBehaviour
            col.gameObject.name != "Bicep Right" &&
            col.gameObject.name != "Bicep Left" &&
            col.gameObject.name != "Forearm Right" &&
-           col.gameObject.name != "Forearm Left")
+           col.gameObject.name != "Forearm Left" &&
+           col.gameObject.name != "Visor" &&
+           col.gameObject.name != "Backpack")
         {ad.Play(0);}
 
     }

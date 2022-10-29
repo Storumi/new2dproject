@@ -39,7 +39,9 @@ public class LeftHand : MonoBehaviour
                    gob.name != "Bicep Right" &&
                    gob.name != "Bicep Left" &&
                    gob.name != "Forearm Right" &&
-                   gob.name != "Forearm Left")
+                   gob.name != "Forearm Left" &&
+                   gob.name!= "Visor" &&
+                   gob.name!= "Backpack")
 
             { rb2d.bodyType = RigidbodyType2D.Static; sr.color = Color.red; }
 
