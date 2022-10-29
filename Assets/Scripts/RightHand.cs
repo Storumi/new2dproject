@@ -7,7 +7,6 @@ public class RightHand : MonoBehaviour
     Rigidbody2D rb2d;
     List<GameObject> currentCollisions = new List<GameObject>();
     SpriteRenderer sr;
-   
     // Start is called before the first frame update
     void Start()
     {
@@ -20,9 +19,9 @@ public class RightHand : MonoBehaviour
     {
 
         
-        rb2d.bodyType = RigidbodyType2D.Dynamic;
-        sr.color = Color.white;
+        
         if (Input.GetButton("GrabR")) { checkhand();  }
+        else { rb2d.bodyType = RigidbodyType2D.Dynamic; sr.color = Color.white;}
     }
     void checkhand()
     {
@@ -48,28 +47,11 @@ public class RightHand : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D col)
-    {
-        print("haha penis");
-        // Add the GameObject collided with to the list.
-        currentCollisions.Add(col.gameObject);
-
-        // Print the entire list to the console.
-        foreach (GameObject gObject in currentCollisions)
-        {
-            print(gObject.name);
-        }
+    {       
+        currentCollisions.Add(col.gameObject);      
     }
-
     void OnCollisionExit2D(Collision2D col)
-    {
-
-        // Remove the GameObject collided with from the list.
-        currentCollisions.Remove(col.gameObject);
-
-        // Print the entire list to the console.
-        foreach (GameObject gObject in currentCollisions)
-        {
-            print(gObject.name);
-        }
+    {      
+        currentCollisions.Remove(col.gameObject);      
     }
 }

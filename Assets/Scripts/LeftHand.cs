@@ -19,9 +19,10 @@ public class LeftHand : MonoBehaviour
     {
 
 
-        rb2d.bodyType = RigidbodyType2D.Dynamic;
-        sr.color = Color.white;
+        
+        
         if (Input.GetButton("GrabL")) { checkhand(); }
+        else { sr.color = Color.white; rb2d.bodyType = RigidbodyType2D.Dynamic; }
     }
     void checkhand()
     {
@@ -47,28 +48,12 @@ public class LeftHand : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D col)
-    {
-        print("haha penis");
-        // Add the GameObject collided with to the list.
-        currentCollisions.Add(col.gameObject);
-
-        // Print the entire list to the console.
-        foreach (GameObject gObject in currentCollisions)
-        {
-            print(gObject.name);
-        }
+    {      
+        currentCollisions.Add(col.gameObject);      
     }
 
     void OnCollisionExit2D(Collision2D col)
-    {
-
-        // Remove the GameObject collided with from the list.
-        currentCollisions.Remove(col.gameObject);
-
-        // Print the entire list to the console.
-        foreach (GameObject gObject in currentCollisions)
-        {
-            print(gObject.name);
-        }
+    {        
+        currentCollisions.Remove(col.gameObject);     
     }
 }

@@ -40,7 +40,7 @@ public class Movement : MonoBehaviour
         turns.y = Yin;
         
         
-        if (Input.GetButtonDown("Jump") && ( footl.landed || footr.landed)) { footl.landed = false ; footr.landed = false ; rb2d.AddForce(hops, ForceMode2D.Impulse) ; }
+        if (Input.GetButtonDown("Jump") && ( footl.landed || footr.landed)) { rb2d.AddForce(hops, ForceMode2D.Impulse) ; }
         
         
         rb2d.AddForce(slides, ForceMode2D.Force);
