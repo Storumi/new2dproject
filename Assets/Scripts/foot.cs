@@ -47,7 +47,7 @@ public class foot : MonoBehaviour
     {
         currentCollisions.Add(col.gameObject);
 
-        
+        print(col.gameObject.name);
         if (col.gameObject.name != "Shin Right" &&
            col.gameObject.name != "Shin Left" &&
            col.gameObject.name != "Thigh Right" &&

@@ -41,11 +41,15 @@ public class Movement : MonoBehaviour
         
         
         if (Input.GetButtonDown("Jump") && ( footl.landed || footr.landed)) { rb2d.AddForce(hops, ForceMode2D.Impulse) ; }
-        
-        
+
         rb2d.AddForce(slides, ForceMode2D.Force);
         rb2d.AddTorque(-Yin, ForceMode2D.Force);
 
+
+    }
+    void fixedUpdate()
+    {
+        
     }
     void OnCollisionEnter2D(Collision2D collision) 
     {
