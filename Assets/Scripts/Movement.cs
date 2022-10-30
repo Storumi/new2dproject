@@ -17,6 +17,7 @@ public class Movement : MonoBehaviour
     Vector3 turns;
     Rigidbody2D rb2d;
     AudioSource ad;
+    bool started;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class Movement : MonoBehaviour
         hops.y = jumpheight;
         slides.y = 0;
 
+        started = false;
         
     }
 
@@ -44,7 +46,8 @@ public class Movement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            title.SetActive(false);
+
+            if (!started) { startfunction(); }
             if (footl.landed || footr.landed)
             { rb2d.AddForce(hops, ForceMode2D.Impulse); }
         }
@@ -60,5 +63,11 @@ public class Movement : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision) 
     {
        // ad.Play(0);
+    }
+    void startfunction()
+    {
+        started = true;
+        title.SetActive(false);
+        rb2d.bodyType = RigidbodyType2D.Dynamic;
     }
 }
