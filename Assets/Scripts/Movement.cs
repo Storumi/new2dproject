@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     public float jumpheight;
     public GameObject footl1;
     public GameObject footr1;
+    public GameObject title;
     public foot footl;
     public foot footr;
     float Xin;
@@ -26,22 +27,27 @@ public class Movement : MonoBehaviour
         hops.x = 0;
         hops.y = jumpheight;
         slides.y = 0;
+
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
         Xin = movespeed * Input.GetAxis("Horizontal");
         Yin = movespeed * Input.GetAxis("Vertical");
 
         slides.x = Xin;
         turns.y = Yin;
-        
-        
-        if (Input.GetButtonDown("Jump") && ( footl.landed || footr.landed)) { rb2d.AddForce(hops, ForceMode2D.Impulse) ; }
 
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            title.SetActive(false);
+            if (footl.landed || footr.landed)
+            { rb2d.AddForce(hops, ForceMode2D.Impulse); }
+        }
         rb2d.AddForce(slides, ForceMode2D.Force);
         rb2d.AddTorque(-Yin, ForceMode2D.Force);
 

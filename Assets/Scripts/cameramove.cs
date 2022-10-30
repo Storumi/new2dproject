@@ -17,6 +17,6 @@ public class cameramove : MonoBehaviour
     {
         
         transform.position = Vector2.Lerp(transform.position, target.transform.position, Time.deltaTime);
-        transform.position = new Vector3(transform.position.x, transform.position.y, -1);
+        transform.position = new Vector3(transform.position.x, transform.position.y, -5);
     }
 }
