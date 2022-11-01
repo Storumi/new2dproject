@@ -22,6 +22,7 @@ public class Movement : MonoBehaviour
     TextMeshPro tmp;
     bool started;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,8 +55,8 @@ public class Movement : MonoBehaviour
             if (footl.landed || footr.landed)
             { rb2d.AddForce(hops, ForceMode2D.Impulse); }
         }
-        rb2d.AddForce(slides, ForceMode2D.Force);
-        rb2d.AddTorque(-Yin, ForceMode2D.Force);
+        rb2d.AddForce(slides*Time.deltaTime*1000, ForceMode2D.Force);
+        rb2d.AddTorque(-Yin * Time.deltaTime*1000, ForceMode2D.Force);
 
         if (handl.winner || handr.winner) { victory();}
     }
