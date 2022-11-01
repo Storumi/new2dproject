@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 public class Movement : MonoBehaviour
 {
     public float movespeed;
     public float jumpheight;
-    public GameObject footl1;
-    public GameObject footr1;
     public GameObject title;
+    public GameObject flag;
     public foot footl;
     public foot footr;
+    public RightHand handr;
+    public LeftHand handl;
     float Xin;
     float Yin;
     Vector2 hops;
@@ -17,14 +19,15 @@ public class Movement : MonoBehaviour
     Vector3 turns;
     Rigidbody2D rb2d;
     AudioSource ad;
+    TextMeshPro tmp;
     bool started;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb2d = this.GetComponent<Rigidbody2D>();
+        rb2d = GetComponent<Rigidbody2D>();
         ad = GetComponent<AudioSource>();
-
+        tmp = title.GetComponent<TextMeshPro>();
         hops.x = 0;
         hops.y = jumpheight;
         slides.y = 0;
@@ -54,14 +57,15 @@ public class Movement : MonoBehaviour
         rb2d.AddForce(slides, ForceMode2D.Force);
         rb2d.AddTorque(-Yin, ForceMode2D.Force);
 
-
+        if (handl.winner || handr.winner) { victory();}
     }
     void fixedUpdate()
     {
         
     }
-    void OnCollisionEnter2D(Collision2D collision) 
+    void OnCollisionEnter2D(Collision2D col) 
     {
+        
        // ad.Play(0);
     }
     void startfunction()
@@ -69,5 +73,10 @@ public class Movement : MonoBehaviour
         started = true;
         title.SetActive(false);
         rb2d.bodyType = RigidbodyType2D.Dynamic;
+    }
+    void victory()
+    {
+        title.SetActive(true);
+        tmp.text = "You Win";
     }
 }

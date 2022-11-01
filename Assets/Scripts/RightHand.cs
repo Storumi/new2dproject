@@ -7,11 +7,13 @@ public class RightHand : MonoBehaviour
     Rigidbody2D rb2d;
     List<GameObject> currentCollisions = new List<GameObject>();
     SpriteRenderer sr;
+    public bool winner;
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        winner = false;
     }
 
     // Update is called once per frame
@@ -50,7 +52,8 @@ public class RightHand : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {       
-        currentCollisions.Add(col.gameObject);      
+        currentCollisions.Add(col.gameObject);
+        if (col.gameObject.name == "FlagPole") { winner = true; }
     }
     void OnCollisionExit2D(Collision2D col)
     {      

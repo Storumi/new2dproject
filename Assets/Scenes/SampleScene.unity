@@ -5642,6 +5642,7 @@ GameObject:
   m_Component:
   - component: {fileID: 651527168}
   - component: {fileID: 651527167}
+  - component: {fileID: 651527169}
   m_Layer: 0
   m_Name: FlagPole
   m_TagString: Untagged
@@ -5717,6 +5718,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &651527169
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651527166}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &745294060
 GameObject:
   m_ObjectHideFlags: 0
@@ -6256,6 +6283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2127ab21ebd1a354ab590c03dd74313e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winner: 0
 --- !u!1 &899230142
 GameObject:
   m_ObjectHideFlags: 0
@@ -7460,6 +7488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6e8be998b8790741ab17653fe8418d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winner: 0
 --- !u!1001 &2023465335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7924,6 +7953,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6884231364807923666, guid: caf2899514bc07e4db377d5d373a4a15, type: 3}
+      propertyPath: flag
+      value: 
+      objectReference: {fileID: 651527166}
+    - target: {fileID: 6884231364807923666, guid: caf2899514bc07e4db377d5d373a4a15, type: 3}
+      propertyPath: handl
+      value: 
+      objectReference: {fileID: 867377632}
+    - target: {fileID: 6884231364807923666, guid: caf2899514bc07e4db377d5d373a4a15, type: 3}
+      propertyPath: handr
+      value: 
+      objectReference: {fileID: 1860549892}
     - target: {fileID: 6884231364807923666, guid: caf2899514bc07e4db377d5d373a4a15, type: 3}
       propertyPath: title
       value: 

@@ -7,11 +7,13 @@ public class LeftHand : MonoBehaviour
     Rigidbody2D rb2d;
     List<GameObject> currentCollisions = new List<GameObject>();
     SpriteRenderer sr;
+    public bool winner;
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        winner = false;
     }
 
     // Update is called once per frame
